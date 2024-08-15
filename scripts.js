@@ -80,7 +80,10 @@ function showResults() {
     });
 
     resultContainer.innerHTML = resultText;
-    document.getElementById('result-page').style.display = 'block';
+    document.getElementById('survey-container').innerHTML = `
+        <h2>결과</h2>
+        <p>${resultText}</p>
+    `;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
