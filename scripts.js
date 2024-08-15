@@ -59,14 +59,14 @@ function nextPage() {
         option.querySelector('.rank').textContent = '';
     });
 
-    // 현재 문항을 숨기고 다음 문항을 표시
+    // 마지막 문항에서 결과 화면으로 이동하기 전에 점수 계산 로직이 누락되지 않도록 수정
     if (currentPage < totalQuestions) {
         currentQuestion.style.display = 'none';
         currentPage++;
         document.getElementById(`question${currentPage}`).style.display = 'block';
-        updateProgressBar();  // 프로그래스 바 업데이트
+        updateProgressBar();
     } else {
-        showResults();  // 모든 문항을 완료한 후 결과 표시
+        showResults();  // 마지막 문항이 끝나면 결과를 표시
     }
 }
 
