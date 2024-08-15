@@ -66,6 +66,7 @@ function nextPage() {
         document.getElementById(`question${currentPage}`).style.display = 'block';
         updateProgressBar();
     } else {
+        currentQuestion.style.display = 'none';
         showResults();  // 마지막 문항이 끝나면 결과를 표시
     }
 }
@@ -79,10 +80,7 @@ function showResults() {
     });
 
     resultContainer.innerHTML = resultText;
-    document.getElementById('survey-container').innerHTML = `
-        <h2>결과</h2>
-        <p>${resultText}</p>
-    `;
+    document.getElementById('result-page').style.display = 'block';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
